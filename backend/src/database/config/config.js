@@ -1,17 +1,14 @@
-const { Sequelize } = require('sequelize');
+const environments = ["development"];
 
-const sequelize = new Sequelize('plans_database_new', 'root', 'password123', {
-  host: 'plans_database',
-  dialect: 'mysql'
-});
-
-const test = async () => {
-  try {
-    await sequelize.authenticate();
-    console.log('Connection has been established successfully.');
-  } catch (error) {
-    console.error('Unable to connect to the database:', error);
-  }
-}
-
-test();
+module.exports = environments.reduce((result, value) => {
+  return Object.assign({}, result, {
+    [value]: {
+      username: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
+      database: process.env.DB_NAME,
+      host: process.env.DB_HOST,
+      port: process.env.DB_PORT,
+      dialect: "mysql",
+    },
+  });
+}, {});
