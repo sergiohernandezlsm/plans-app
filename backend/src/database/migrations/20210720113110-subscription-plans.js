@@ -1,6 +1,6 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable("plans", {
+    return queryInterface.createTable("subscription_plans", {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -8,10 +8,10 @@ module.exports = {
         type: Sequelize.INTEGER.UNSIGNED,
       },
       planCode: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(2),
       },
       name: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(50),
       },
       monthlyCost: {
         type: Sequelize.INTEGER,
@@ -22,10 +22,12 @@ module.exports = {
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP()'),
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP()'),
       },
       deletedAt: {
         allowNull: true,
@@ -35,6 +37,6 @@ module.exports = {
   },
 
   down: (queryInterface) => {
-    return queryInterface.dropTable("plans");
+    return queryInterface.dropTable("subscription_plans");
   },
 };
