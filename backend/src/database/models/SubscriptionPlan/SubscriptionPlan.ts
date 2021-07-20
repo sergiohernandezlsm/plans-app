@@ -1,5 +1,5 @@
 import { Sequelize, Model, DataTypes } from "sequelize";
-import { sequelizeConnection } from './';
+import { sequelizeConnection } from '..';
 
 const sequelize: Sequelize = sequelizeConnection;
 

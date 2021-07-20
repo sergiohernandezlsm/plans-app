@@ -1,9 +1,9 @@
-import SubscriptionPlan from '../../database/models/SubscriptionPlan';
+import SubscriptionPlan from '../../database/models/SubscriptionPlan/SubscriptionPlan';
 import express from 'express';
 import request from 'supertest';
 import routes from '.';
 
-jest.mock('../../database/models/SubscriptionPlan');
+jest.mock('../../database/models/SubscriptionPlan/SubscriptionPlan');
 
 const mockFindAll = SubscriptionPlan.findAll as jest.Mock;
 const mockFindByPk = SubscriptionPlan.findByPk as jest.Mock;
