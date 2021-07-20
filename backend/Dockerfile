@@ -11,4 +11,4 @@ COPY . /app
 
 EXPOSE 5000
 
-CMD ["node", "./dist/app.js"]
+CMD ["node", "start"]
