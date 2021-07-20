@@ -1,15 +1,10 @@
-import express, { Response, Request, Application } from 'express';
-import SubscriptionPlan from './database/models';
-import { test } from './database/models/index';
+import express, { Application } from 'express';
+import subscriptionPlans from './routes/subscription-plans';
 
 const app: Application = express();
 
-app.get('/', async (req: Request, res: Response) => {
-  res.send(
-    await SubscriptionPlan.findAll()
-  );
-});
+app.use(express.json());
 
-test();
+app.use('/', subscriptionPlans);
 
 app.listen(5000, () => console.log('server running'));
