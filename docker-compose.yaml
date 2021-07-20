@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  mysql_db:
+    image: mysql:5.7
+    volumes:
+      - data:/data/db
+    ports:
+      - "3308:3306"
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: 'plans_database'
+      MYSQL_USER: 'root'
+      MYSQL_PASSWORD: 'password123'
+      MYSQL_ROOT_PASSWORD: 'password123'
+volumes:
+  data: {}
