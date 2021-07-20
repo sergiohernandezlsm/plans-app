@@ -15,7 +15,6 @@ router.get('/subscription-plans', async (req: Request, res: Response) => {
 
 router.get('/subscription-plans/:id', async (req: Request, res: Response) => {
   const { id } = req.params;
-  console.log('test inside negative');
   const subscriptionPlan = await SubscriptionPlan.findByPk(id);
   if (!subscriptionPlan) {
     return res.status(404).send({ message: notFound });
