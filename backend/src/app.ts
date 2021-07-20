@@ -1,10 +1,13 @@
 import express, { Response, Request, Application } from 'express';
+import SubscriptionPlan from './database/models';
 import { test } from './database/models/index';
 
 const app: Application = express();
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Hellos2');
+app.get('/', async (req: Request, res: Response) => {
+  res.send(
+    await SubscriptionPlan.findAll()
+  );
 });
 
 test();

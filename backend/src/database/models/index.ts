@@ -10,15 +10,27 @@ const sequelize = new Sequelize(
   }
 );
 
-class Plan extends Model {
+interface SubscriptionPlanTypes {
+  id: number;
+  planCode: string;
+  name: string;
+  monthlyCost: number;
+  annualCost: number;
+}
+
+export default class SubscriptionPlan extends Model<SubscriptionPlanTypes> {
   public id!: number;
   public planCode!: string;
   public name!: string;
   public monthlyCost!: number;
   public annualCost!: number;
+
+  public readonly created_at!: Date;
+  public readonly updated_at!: Date;
+  public readonly deleted_at?: Date;
 }
 
-Plan.init(
+SubscriptionPlan.init(
   {
     id: {
       type: DataTypes.INTEGER.UNSIGNED,
@@ -26,24 +38,24 @@ Plan.init(
       primaryKey: true,
     },
     planCode: {
-      type: new DataTypes.STRING(2),
+      type: DataTypes.STRING(2),
       allowNull: false,
     },
     name: {
-      type: new DataTypes.STRING(128),
+      type: DataTypes.STRING(50),
       allowNull: false,
     },
     monthlyCost: {
-      type: new DataTypes.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     annualCost: {
-      type: new DataTypes.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
   },
   {
-    tableName: "plans",
+    tableName: "subscription_plans",
     sequelize,
   }
 );
@@ -51,7 +63,7 @@ Plan.init(
 export const test = async () => {
   try {
     await sequelize.authenticate();
-    console.log('Connection has been established successfully.');
+    console.log('Connection has been established successfully Sergio.');
   } catch (error) {
     console.error('Unable to connect to the database:', error);
   }
