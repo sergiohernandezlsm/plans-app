@@ -1,15 +1,8 @@
 import { Sequelize, Model, DataTypes } from "sequelize";
 import { sequelizeConnection } from '..';
+import { SubscriptionPlanTypes } from '../../../types';
 
 const sequelize: Sequelize = sequelizeConnection;
-
-interface SubscriptionPlanTypes {
-  id: number;
-  planCode: string;
-  name: string;
-  monthlyCost: number;
-  annualCost: number;
-}
 
 export default class SubscriptionPlan extends Model<SubscriptionPlanTypes> {
   public id!: number;

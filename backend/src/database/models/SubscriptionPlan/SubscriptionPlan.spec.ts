@@ -1,4 +1,5 @@
 import { DataTypes } from 'sequelize';
+import { SubscriptionPlanTypes } from '../../../types';
 
 const mSequelize = {};
 
@@ -12,7 +13,7 @@ const modelStaticMethodMocks = {
 
 jest.mock('sequelize', () => {
   class MockModel {
-    public static init(attributes: any, options: any) {
+    public static init(attributes: SubscriptionPlanTypes, options: any) {
       modelStaticMethodMocks.init(attributes, options);
     }
   }

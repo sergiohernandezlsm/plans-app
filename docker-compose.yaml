@@ -3,7 +3,7 @@ services:
   mysql_db:
     image: mysql:5.7
     volumes:
-      - data:/data/db
+      - mydatabase:/var/lib/mysql
     ports:
       - "3308:3306"
     restart: unless-stopped
@@ -32,4 +32,4 @@ services:
     container_name: backend_container_app
     command: npm run dev
 volumes:
-  data: {}
+  mydatabase: {}
