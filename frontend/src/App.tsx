@@ -1,43 +1,10 @@
-import React from 'react';
-import axios from 'axios';
-import logo from './logo.svg';
+import SubscriptionPlansPage from './pages/subscription-plans';
 import './App.css';
 
-function App() {
-
-  const testRequest = () => {
-    axios.get('http://localhost:5000/subscription-plans')
-      .then(function (response) {
-        // handle success
-        console.log(response);
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      })
-      .then(function () {
-        // always executed
-      });
-  }
-  testRequest();
-
-
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SubscriptionPlansPage />
     </div>
   );
 }
