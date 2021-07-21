@@ -9,7 +9,6 @@ const SubscriptionPlansPage = () => {
     axios.get('http://localhost:5000/subscription-plans')
       .then(function (response) {
         setData(response.data);
-        console.log(response);
       })
       .catch(function (error) {
         console.log(error);

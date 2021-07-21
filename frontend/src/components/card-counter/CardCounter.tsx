@@ -14,7 +14,7 @@ const CardCounter: React.FC<Props> = ({ cards }) => {
       <Row className="justify-content-center">
         {cards.map((card, index) => {
           return (
-            <Col xs={12} lg={2} key={`key-${index}`}>
+            <Col xs={12} key={`key-${index}`}>
               <CardPlan
                 card={card}
               />
