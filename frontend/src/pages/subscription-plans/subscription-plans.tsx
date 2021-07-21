@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Container from 'react-bootstrap/Container';
 import CardCounter from '../../components/card-counter/CardCounter';
+import TotalPlans from '../../components/total-plans/TotalPlans';
 
 const SubscriptionPlansPage = () => {
   const [data, setData] = useState([]);
@@ -32,6 +33,7 @@ const SubscriptionPlansPage = () => {
     <>
       <Container>
         <CardCounter cards={data} />
+        <TotalPlans />
       </Container>
     </>
   )
