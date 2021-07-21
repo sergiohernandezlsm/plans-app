@@ -5,8 +5,6 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import styles from "./Card.module.scss";
-
 
 export interface Props {
   card: CardTypes;
@@ -19,7 +17,7 @@ const CardPlan: React.FC<Props> = ({ card }) => {
       <Card.Body>
         <Container>
           <Row>
-            <Col className={styles['inner-card-styles']} xs={12} md={3}>
+            <Col xs={12} md={3}>
               <Card.Title>{card.planCode}</Card.Title>
               <Card.Title>{card.name}</Card.Title>
             </Col>
