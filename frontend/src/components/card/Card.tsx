@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import styles from './Card.module.css';
 import ButtonPlan from '../button';
+import 'flag-icon-css/css/flag-icon.min.css';
 
 export interface Props {
   card: SubscriptionsTypes;
@@ -19,7 +20,7 @@ const CardPlan: React.FC<Props> = ({ card, handleContact }) => {
         <Container>
           <Row>
             <Col xs={12} md={3}>
-              <Card.Title>{card.planCode}</Card.Title>
+              <span className={` ${styles.flag} flag-icon flag-icon-${card.planCode}`}></span>
               <Card.Title className={styles['name-styles']}>{card.name}</Card.Title>
             </Col>
             <Col className={styles['center-item']} xs={12} md={3}>
