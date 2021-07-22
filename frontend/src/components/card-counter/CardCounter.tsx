@@ -1,7 +1,7 @@
 import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import CardPlan from '../card';
+import CardPlan from '../card-plan';
 import { SubscriptionsTypes, SubscriptionSelectedTypes } from '../../types';
 
 export interface Props {
@@ -11,20 +11,18 @@ export interface Props {
 
 const CardCounter: React.FC<Props> = ({ subscriptionsData, selectionHandler }) => {
   return (
-    <>
-      <Row className="justify-content-center">
-        {subscriptionsData.map((card, index) => {
-          return (
-            <Col xs={12} key={`key-${index}`}>
-              <CardPlan
-                selectionHandler={selectionHandler}
-                card={card}
-              />
-            </Col>
-          )
-        })}
-      </Row>
-    </>
+    <Row className="justify-content-center">
+      {subscriptionsData.map((card, index) => {
+        return (
+          <Col xs={12} key={`key-${index}`}>
+            <CardPlan
+              selectionHandler={selectionHandler}
+              card={card}
+            />
+          </Col>
+        )
+      })}
+    </Row>
   )
 };
 

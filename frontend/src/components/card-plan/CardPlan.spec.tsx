@@ -1,5 +1,5 @@
 import { shallow } from 'enzyme';
-import Card, { Props } from './Card';
+import CardPlan, { Props } from './CardPlan';
 
 const props: Props = {
   card: {},
@@ -8,7 +8,7 @@ const props: Props = {
 
 describe('Card Component', () => {
   it('renders <Card /> component', () => {
-    const wrapper = shallow(<Card {...props} />);
+    const wrapper = shallow(<CardPlan {...props} />);
     expect(wrapper).toMatchSnapshot();
   });
 });

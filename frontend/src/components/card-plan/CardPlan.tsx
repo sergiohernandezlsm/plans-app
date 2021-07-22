@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import styles from './Card.module.css';
+import styles from './CardPlan.module.css';
 import ButtonPlan from '../button';
 import 'flag-icon-css/css/flag-icon.min.css';
 

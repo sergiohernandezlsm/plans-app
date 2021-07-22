@@ -8,7 +8,6 @@ import TotalPlans from '../../components/total-plans/TotalPlans';
 const SubscriptionPlansPage = () => {
   const { subscriptions, totalPlans, getTotal } = useContext(SubcriptionsContext);
   const [subscriptionPlans, setSubscriptionPlans] = useState(subscriptions);
-
   const selectionHandler = (newSelectedValue: SubscriptionSelectedTypes) => {
     const newSelection = subscriptionPlans?.map((plan: SubscriptionsTypes) => {
       if (newSelectedValue.id === plan.id) {
