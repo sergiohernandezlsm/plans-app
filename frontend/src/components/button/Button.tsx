@@ -11,10 +11,10 @@ export interface Props {
   id?: number;
 }
 
-const CardPlan: React.FC<Props> = ({ planCost, selected, contact, selectionHandler, id }) => {
+const ButtonPlan: React.FC<Props> = ({ planCost, selected, contact, selectionHandler, id }) => {
   return (
     <Button onClick={() => selectionHandler({ planValue: planCost, id: id, planType: contact })} className={styles['button-styles']} variant={`${selected ? 'primary' : 'secondary'}`}>{`${contact}: £${planCost}`}</Button>
   )
 };
 
-export default CardPlan;
+export default ButtonPlan;

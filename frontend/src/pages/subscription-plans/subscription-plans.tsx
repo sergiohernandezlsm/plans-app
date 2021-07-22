@@ -1,10 +1,9 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import SubcriptionsContext from '../../store/subscriptions-context';
 import { SubscriptionsTypes, SubscriptionSelectedTypes } from '../../types';
 import Container from 'react-bootstrap/Container';
 import CardCounter from '../../components/card-counter/CardCounter';
 import TotalPlans from '../../components/total-plans/TotalPlans';
-import { useState } from 'react';
 
 const SubscriptionPlansPage = () => {
   const { subscriptions, totalPlans, getTotal } = useContext(SubcriptionsContext);
