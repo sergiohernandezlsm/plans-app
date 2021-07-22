@@ -1,5 +1,5 @@
 import React from "react";
-import { SubscriptionsTypes } from '../../types';
+import { SubscriptionsTypes, SubscriptionSelectedTypes } from '../../types';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -10,10 +10,10 @@ import 'flag-icon-css/css/flag-icon.min.css';
 
 export interface Props {
   card: SubscriptionsTypes;
-  handleContact: any;
+  selectionHandler: (x: SubscriptionSelectedTypes) => void;
 }
 
-const CardPlan: React.FC<Props> = ({ card, handleContact }) => {
+const CardPlan: React.FC<Props> = ({ card, selectionHandler }) => {
   return (
     <Card className={styles['card-styles']}>
       <Card.Body>
@@ -29,10 +29,10 @@ const CardPlan: React.FC<Props> = ({ card, handleContact }) => {
               </Card.Text>
             </Col>
             <Col className={styles['center-item']} xs={12} sm={6} md={3}>
-              <ButtonPlan id={card.id} handleContact={handleContact} selected={card.selectedValue === card.monthlyCost} contact={'Monthly'} planCost={card.monthlyCost} />
+              <ButtonPlan id={card.id} selectionHandler={selectionHandler} selected={card.selectedValue === card.monthlyCost} contact={'Monthly'} planCost={card.monthlyCost} />
             </Col>
             <Col className={styles['center-item']} xs={12} sm={6} md={3}>
-              <ButtonPlan id={card.id} handleContact={handleContact} selected={card.selectedValue === card.annualCost} contact={'Annual'} planCost={card.annualCost} />
+              <ButtonPlan id={card.id} selectionHandler={selectionHandler} selected={card.selectedValue === card.annualCost} contact={'Annual'} planCost={card.annualCost} />
             </Col>
           </Row>
         </Container>

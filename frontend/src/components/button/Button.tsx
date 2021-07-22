@@ -1,4 +1,5 @@
 import React from "react";
+import { SubscriptionSelectedTypes } from '../../types';
 import Button from 'react-bootstrap/Button';
 import styles from './Button.module.css';
 
@@ -6,13 +7,13 @@ export interface Props {
   planCost: number | undefined;
   selected: boolean;
   contact: string;
-  handleContact: any;
+  selectionHandler: (x: SubscriptionSelectedTypes) => void;
   id: number | undefined;
 }
 
-const CardPlan: React.FC<Props> = ({ planCost, selected, contact, handleContact, id }) => {
+const CardPlan: React.FC<Props> = ({ planCost, selected, contact, selectionHandler, id }) => {
   return (
-    <Button onClick={() => handleContact({ planValue: planCost, id: id, planType: contact })} className={styles['button-styles']} variant={`${selected ? 'primary' : 'secondary'}`}>{`${contact}: £${planCost}`}</Button>
+    <Button onClick={() => selectionHandler({ planValue: planCost, id: id, planType: contact })} className={styles['button-styles']} variant={`${selected ? 'primary' : 'secondary'}`}>{`${contact}: £${planCost}`}</Button>
   )
 };
 

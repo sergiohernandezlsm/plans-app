@@ -9,3 +9,16 @@ export interface SubscriptionsTypes extends Partial<SelectedValue> {
   monthlyCost?: number;
   annualCost?: number;
 }
+
+export interface SubscriptionSelectedTypes {
+  id?: number;
+  planType?: string;
+  planValue?: number;
+}
+
+export interface ContextTypes {
+  subscriptions: SubscriptionsTypes[];
+  totalPlans: number;
+  getTotal: (x: SelectedValue) => void;
+}
+
