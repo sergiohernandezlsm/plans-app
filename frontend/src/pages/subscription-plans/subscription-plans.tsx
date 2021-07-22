@@ -11,7 +11,7 @@ const SubscriptionPlansPage = () => {
   const [subscriptionPlans, setSubscriptionPlans] = useState(subscriptions);
 
   const selectionHandler = (newSelectedValue: SubscriptionSelectedTypes) => {
-    const newSelection = subscriptionPlans.map((plan: SubscriptionsTypes) => {
+    const newSelection = subscriptionPlans?.map((plan: SubscriptionsTypes) => {
       if (newSelectedValue.id === plan.id) {
         return {
           id: plan.id,
@@ -27,9 +27,9 @@ const SubscriptionPlansPage = () => {
 
     setSubscriptionPlans(newSelection);
 
-    getTotal(newSelection.map((value: SubscriptionsTypes) => {
+    getTotal(newSelection?.map((value: SubscriptionsTypes) => {
       return value.selectedValue
-    }).reduce(function (total: number, amount: number) {
+    }).reduce((total: number, amount: number) => {
       return total + amount
     }, 0));
   }

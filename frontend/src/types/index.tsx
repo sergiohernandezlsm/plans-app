@@ -15,10 +15,3 @@ export interface SubscriptionSelectedTypes {
   planType?: string;
   planValue?: number;
 }
-
-export interface ContextTypes {
-  subscriptions: SubscriptionsTypes[];
-  totalPlans: number;
-  getTotal: (x: SelectedValue) => void;
-}
-
