@@ -11,7 +11,6 @@ const SubscriptionPlansPage = () => {
   const [subscriptionPlans, setSubscriptionPlans] = useState(subscriptions);
 
   const selectionHandler = (newSelectedValue: SubscriptionSelectedTypes) => {
-    console.log('newSelectedValue =>', newSelectedValue)
     const newSelection = subscriptionPlans?.map((plan: SubscriptionsTypes) => {
       if (newSelectedValue.id === plan.id) {
         return {
