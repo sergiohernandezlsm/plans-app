@@ -11,6 +11,7 @@ const SubscriptionPlansPage = () => {
   const [subscriptionPlans, setSubscriptionPlans] = useState(subscriptions);
 
   const selectionHandler = (newSelectedValue: SubscriptionSelectedTypes) => {
+    console.log('newSelectedValue =>', newSelectedValue)
     const newSelection = subscriptionPlans?.map((plan: SubscriptionsTypes) => {
       if (newSelectedValue.id === plan.id) {
         return {
@@ -37,7 +38,7 @@ const SubscriptionPlansPage = () => {
   return (
     <>
       <Container>
-        <CardCounter selectionHandler={selectionHandler} subscriptionsData={subscriptionPlans} />
+        <CardCounter data-test="card-counter-test" selectionHandler={selectionHandler} subscriptionsData={subscriptionPlans} />
         <TotalPlans totalPlans={totalPlans} />
       </Container>
     </>

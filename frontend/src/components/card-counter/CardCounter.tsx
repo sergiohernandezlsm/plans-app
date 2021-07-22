@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 import CardPlan from '../card';
 import { SubscriptionsTypes, SubscriptionSelectedTypes } from '../../types';
 
-interface Props {
+export interface Props {
   selectionHandler: (x: SubscriptionSelectedTypes) => void;
   subscriptionsData: SubscriptionsTypes[];
 }
