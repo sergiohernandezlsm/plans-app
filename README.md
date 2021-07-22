@@ -2,7 +2,7 @@
 
 ## Setup
 
-Install your dependencies in backend/frontend directories :
+Install your dependencies in backend AND frontend directories :
 
 ```
 $ npm install
