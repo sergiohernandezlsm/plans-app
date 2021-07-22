@@ -4,11 +4,11 @@ import Button from 'react-bootstrap/Button';
 import styles from './Button.module.css';
 
 export interface Props {
-  planCost: number | undefined;
+  planCost?: number;
   selected: boolean;
   contact: string;
   selectionHandler: (x: SubscriptionSelectedTypes) => void;
-  id: number | undefined;
+  id?: number;
 }
 
 const CardPlan: React.FC<Props> = ({ planCost, selected, contact, selectionHandler, id }) => {
