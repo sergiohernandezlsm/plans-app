@@ -5,7 +5,7 @@ const props = {
   totalPlans: 1
 }
 
-describe('<MyComponent />', () => {
+describe('TotalPlans Component', () => {
   it('renders <TotalPlans /> component', () => {
     const wrapper = shallow(<TotalPlans {...props} />);
     expect(wrapper).toMatchSnapshot();
