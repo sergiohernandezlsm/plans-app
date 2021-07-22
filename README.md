@@ -8,7 +8,7 @@ Install your dependencies in backend AND frontend directories :
 $ npm install
 ```
 
-## To Start the project (IN THE ROOT WHERE docker-compose file exist)
+## To Start the project run next commands in the root of this project
 
 RUN make develop COMMMAND TO START PROJECT
 ```
