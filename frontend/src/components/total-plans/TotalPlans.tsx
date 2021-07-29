@@ -2,7 +2,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
-import styles from './TotalPlans.module.css';
+import styles from './TotalPlans.module.scss';
 
 interface Props {
   totalPlans: number;
