@@ -1,7 +1,7 @@
 import React from "react";
 import { SubscriptionSelectedTypes } from '../../types';
 import Button from 'react-bootstrap/Button';
-import styles from './Button.module.css';
+import styles from './Button.module.scss';
 
 export interface Props {
   planCost?: number;

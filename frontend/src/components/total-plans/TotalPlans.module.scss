@@ -16,31 +16,31 @@
 
 .extra-style-item {
   justify-content: flex-end;
+  @media only screen and (max-width:767px){
+    justify-content: center;
+  }
 }
 
 .total-cost-styles {
   font-size: 27px;
   font-weight: 900;
   color: #0d6efd;
+  @media only screen and (max-width:575px){
+    font-size: 27px;
+    font-weight: 800;
+  }
 }
 .total-text-styles {
   font-size: 21px;
   font-weight: 600;
+  @media only screen and (max-width:575px){
+    font-size: 18px;
+    font-weight: 600;
+  }
 }
 
 @media only screen and (max-width:767px){
   .extra-style-item {
     justify-content: center;
-  }
-}
-
-@media only screen and (max-width:575px){
-  .total-cost-styles {
-    font-size: 27px;
-    font-weight: 800;
-  }
-  .total-text-styles {
-    font-size: 18px;
-    font-weight: 600;
   }
 }
