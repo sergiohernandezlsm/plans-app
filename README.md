@@ -14,7 +14,7 @@ RUN make develop COMMMAND TO START PROJECT
 ```
 $ make develop
 ```
-THEN RUN make migrations TO CREATE TABLES AND DATA
+After the app is up and running RUN make migrations TO CREATE TABLES AND DATA
 
 ```
 $ make migrations

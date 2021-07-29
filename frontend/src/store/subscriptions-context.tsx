@@ -17,7 +17,7 @@ export const SubcriptionsContextProvider = (props: any) => {
   }, [sendRequest, totalPlans]);
 
   if (!subscriptions.length) {
-    return <p>Loading...</p>;
+    return <p>No data found...</p>;
   }
 
   return (
