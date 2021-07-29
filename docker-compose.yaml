@@ -28,7 +28,7 @@ services:
       DB_PORT: ${DB_PORT}
       NODE_ENV: ${NODE_ENV}
     volumes:
-      - ./backend:/app
+      - ./backend/src:/app/src
     container_name: backend_container_app
     command: npm run dev
   frontend:
@@ -36,7 +36,7 @@ services:
     ports:
       - '3000:3000'
     volumes:
-      - ./frontend:/app
+      - ./frontend/src:/app/src
     stdin_open: true
     tty: true
     depends_on:
